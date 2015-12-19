@@ -14,10 +14,16 @@
  *= require_self
  */
 @import "materialize/components/color";
-$primary-color: color("grey", "darken-2") !default;
+$primary-color: color("grey", "lighten-1") !default;
+$secondary-color: color("teal", "lighten-2") !default;
 @import 'materialize';
 
 .logo {
   height: 60px;
   padding: 7px 0px 0px 0px;
+}
+
+.btn {
+  margin: 5px 0px 0px 0px;
+  width: 95%
 }

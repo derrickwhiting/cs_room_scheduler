@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col s12 m12 l12">
-      <h1>Meeting: <%= @meeting.display %></h1>
-      <p><%= @meeting.title %></p>
+    <div class="col s12 m12 center">
+      <h3><%= @meeting.title %></h3>
+      <h4><%= @meeting.display %></h4>
       <p>Hosted by: <%= @meeting.host %></p>
       <p><%= @meeting.description %></p>
-      <p><%= @meeting.room %></p>
+      <p><%= @meeting.room.name %></p>
 
       <%= link_to 'Edit Meeting', edit_day_meeting_path(@meeting.day, @meeting), class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
 

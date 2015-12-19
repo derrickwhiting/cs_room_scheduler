@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col s10 offset-s1 m10 offset-m1 l10 offset-l1">
+    <div class="col s12 m10 offset-m1 center">
       <h3><%= @meeting.display %></h3>
+      <h4><%= @meeting.room.name %></h4>
       <% if user_signed_in? %>
         <%= form_for [@meeting.day, @meeting] do |f|%>
           <br />

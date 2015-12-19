@@ -1,7 +1,15 @@
-<h1> <%= @day.date.strftime("%D") %> </h1>
-
-<ul>
-  <% @day.meetings.where(title: nil).order('id asc').each do |meeting| %>
-     <li><%= link_to meeting.display, edit_day_meeting_path(@day, meeting) %></li>
-     <% end %>
-</ul>
+<h3 class="center"> <%= @day.date.strftime("%D") %></h3>
+<div class="row">
+  <div class="col s12 m12">
+    <% Room.all.each do |room|%>
+    <div class="col s12 m4 center">
+    <%= room.name %>
+    <ul>
+      <% @day.meetings.where(title: nil, room_id: room.id).order('id asc').each do |meeting| %>
+         <li><%= link_to meeting.display, edit_day_meeting_path(@day, meeting), class: 'btn' %></li>
+         <% end %>
+    </ul>
+    </div>
+    <% end %>
+  </div>
+</div>
