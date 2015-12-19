@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
-
 @import "materialize/components/color";
-$primary-color: color("blue", "lighten-2") !default;
+$primary-color: color("grey", "darken-2") !default;
 @import 'materialize';
+
+.logo {
+  height: 60px;
+  padding: 7px 0px 0px 0px;
+}

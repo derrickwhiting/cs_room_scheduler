@@ -8,6 +8,7 @@ class CreateMeetings < ActiveRecord::Migration
       t.string :host
       t.text :description
       t.boolean :reminder
+      t.belongs_to :day
 
       t.timestamps null: false
     end

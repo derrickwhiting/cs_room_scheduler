@@ -1,2 +1,15 @@
-<h1>Meetings#show</h1>
-<p>Find me in app/views/meetings/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <h1>Meeting: <%= @meeting.display %></h1>
+      <p><%= @meeting.title %></p>
+      <p>Hosted by: <%= @meeting.host %></p>
+      <p><%= @meeting.description %></p>
+      <p><%= @meeting.room %></p>
+
+      <%= link_to 'Edit Meeting', edit_day_meeting_path(@meeting.day, @meeting), class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')" %>
+
+      <%= link_to 'Cancel Meeting', clear_path(@meeting), class: 'btn', onclick: "Materialize.showStaggeredList('#staggered-test')", method: :put %>
+    </div>
+  </div>
+</div>

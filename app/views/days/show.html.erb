@@ -1,2 +1,7 @@
-<h1>Days#show</h1>
-<p>Find me in app/views/days/show.html.erb</p>
+<h1> <%= @day.date.strftime("%D") %> </h1>
+
+<ul>
+  <% @day.meetings.where(title: nil).order('id asc').each do |meeting| %>
+     <li><%= link_to meeting.display, edit_day_meeting_path(@day, meeting) %></li>
+     <% end %>
+</ul>
