@@ -27,3 +27,12 @@ $secondary-color: color("teal", "lighten-2") !default;
   margin: 5px 0px 0px 0px;
   width: 95%
 }
+
+.collection {
+  border: none !important;
+  border-radius: 10%;
+}
+
+.collection-item {
+  border: none !important;
+}

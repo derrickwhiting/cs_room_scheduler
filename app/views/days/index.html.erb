@@ -1,15 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col s12 m12">
-      <div c></div>
       <ul class="collection">
         <% @days.each do |day| %>
           <%= link_to day_path(day) do %>
-           <li class="collection-item"><%= day.date.strftime("%D") %></li>
+           <li class="collection-item center"><%= day.date.strftime("%A - %B %u, %Y") %></li>
           <% end %>
           <% Room.all.each do |room|%>
-            <ul class="collection-item">
-            <% if day.meetings.where(room_id: room.id).where.not(title: nil).order('id asc').any? %>
+          <% if day.meetings.where(room_id: room.id).where.not(title: nil).order('id asc').any? %>
+            <li class="collection-item">
               <%= room.name %>
               <% day.meetings.where(room_id: room.id).where.not(title: nil).order('id asc').each do |meeting| %>
                 <%= link_to day_meeting_path(day, meeting) do %>
@@ -19,8 +18,8 @@
                  <div class="col s4 m4 right-align">Hosted by: <%= meeting.host %></div></li>
                 <% end %>
               <% end %>
+            </li>
             <% end %>
-            </ul>
           <% end %>  
         <% end %>
       </ul>
